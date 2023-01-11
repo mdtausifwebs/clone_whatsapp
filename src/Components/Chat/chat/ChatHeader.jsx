@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Typography, styled } from "@mui/material"
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Search as SearchIcon } from "@mui/icons-material"
-import { defaultProfilePicture } from "../../../constants/logoImage"
+// import { defaultProfilePicture } from "../../../constants/logoImage"
 const Component = styled(Box)`
 display:flex;
 height:44px;
