@@ -1,4 +1,3 @@
-import "./App.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Massanger from "./Components/Massanger";
 import AccountProvider from "./context/AccountProvider";

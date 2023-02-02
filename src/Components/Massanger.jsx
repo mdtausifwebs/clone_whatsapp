@@ -27,30 +27,21 @@ box-shadow:none;
 `
 const Massanger = () => {
     const { account } = useContext(AccountContext)
-    // console.log(account)
     return (
         <Component>
-            {account ? 
-             <>
-             <ChatHeader>
-                 {/* <Box>
-                     <WhatsAppIcon />
-                     <span>WhatsApp Web</span>
-                 </Box> */}
-                 <Toolbar></Toolbar>
-             </ChatHeader>
-             <ChatDilog /> 
-         </>
-            : <>
-                <LoginHeader>
-                    {/* <Box>
-                        <WhatsAppIcon />
-                        <span>WhatsApp Web</span>
-                    </Box> */}
-                    <Toolbar></Toolbar>
-                </LoginHeader>
-                <Logindilog />
-            </>}
+            {account ?
+                <>
+                    <ChatHeader>
+                        <Toolbar></Toolbar>
+                    </ChatHeader>
+                    <ChatDilog />
+                </>
+                : <>
+                    <LoginHeader>
+                        <Toolbar></Toolbar>
+                    </LoginHeader>
+                    <Logindilog />
+                </>}
         </Component>
     )
 }

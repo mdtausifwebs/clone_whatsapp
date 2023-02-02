@@ -31,10 +31,13 @@ const QrCodeImage = styled("img")({
 })
 const Logindilog = () => {
     const { setAccount } = useContext(AccountContext)
+    // console.log(account)
+
     const LogSuccessHandlar = async (res) => {
         const decodeinfo = jwt_decode(res.credential)
         setAccount(decodeinfo)
         await adduser(decodeinfo)
+        // console.log("decodeinfo",decodeinfo)
     }
     const LogErrorHandlar = (res) => {
         console.log("err", res)

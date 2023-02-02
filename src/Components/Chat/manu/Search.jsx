@@ -29,14 +29,14 @@ height:25px;
 font-size:14px
 `
 
-const Search = () => {
+const Search = ({ settext }) => {
   return (
     <Component>
       <Wrapper>
         <Icon>
           <SearchIcon />
         </Icon>
-        <InputField placeholder='Search for New Chat' />
+        <InputField onChange={(e) => settext(e.target.value)} placeholder='Search for New Chat' />
         <SearchManu />
       </Wrapper>
     </Component>

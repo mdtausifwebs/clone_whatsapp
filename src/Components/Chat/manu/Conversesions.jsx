@@ -15,22 +15,28 @@ background-color:#e9edef;
 opacity:0.6;
 `
 
-const Conversesions = () => {
+const Conversesions = ({ text }) => {
     const [usersList, setusersList] = useState([])
-    const { account } = useContext(AccountContext)
+    const { account, socket, setactiveusers } = useContext(AccountContext)
     // console.log(account)
     useEffect(() => {
         const getUserdata = async () => {
             let users = await getUsers()
-            setusersList([...users.users])
+            const filterUser = users.users.filter((user) => user.name.toLowerCase().includes(text.toLowerCase()));
+            setusersList([...filterUser])
         }
         getUserdata()
-    }, [])
+    }, [text])
+    useEffect(() => {
+        socket.current.emit("adduser", account)
+        socket.current.on("getusers", users => {
+            setactiveusers(users)
+        })
+    },[account])
     return (
         <Component>
             {
                 usersList?.map((item, i) => {
-                    // console.log(item.sub !== account.sub && "tausiif")
                     return (
                         <Box key={i}>
                             {item?.sub !== account?.sub && <Convertion item={item} />}

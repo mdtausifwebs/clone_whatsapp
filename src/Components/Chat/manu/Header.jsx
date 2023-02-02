@@ -43,7 +43,7 @@ const Header = () => {
     return (
         <>
             <Component >
-                <Image src={account?.picture} alt="" onClick={() => !openDrawer ? setopenDrawer(true) : null} />
+                <Image src={account?.picture} alt={account?.picture} onClick={() => !openDrawer ? setopenDrawer(true) : null} />
                 <Typography>{account?.name}</Typography>
                 <IconComponent>
                     <AutorenewIcon onClick={() => window.location.reload()} />
